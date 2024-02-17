@@ -1,0 +1,274 @@
+.font-responsive {
+  font-size: 5vw; /* Font size will be 5% of the viewport width */
+}
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  padding: 0%;
+  background-color: #b9b9b9;
+}
+
+#slide {
+  width: max-content;
+  margin-top: 0%;
+}
+.item {
+  width: 13%;
+  height: 40%;
+  background-position: 50% 50%;
+  display: inline-block;
+  transition: 2s;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  border-radius: 20px;
+}
+.item:nth-child(1),
+.item:nth-child(2) {
+  left: 0;
+  top: 0;
+  transform: translate(0, 0);
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+}
+.item:nth-child(3) {
+  left: 50%;
+}
+.item:nth-child(4) {
+  left: calc(50% + 15%);
+}
+.item:nth-child(5) {
+  left: calc(50% + 30%);
+}
+.item:nth-child(n + 6) {
+  left: calc(50% + 45%);
+  opacity: 0;
+}
+
+.item:nth-child(2) .content {
+  display: block;
+  z-index: 11111;
+}
+.item .name {
+  font-family: "Poppins", sans-serif;
+  font-size: 100px;
+  font-weight: bold;
+  opacity: 0;
+  animation: showcontent 1s ease-in-out 1s forwards;
+}
+
+.item .solutions {
+  font-size: 90px;
+}
+
+.item .des {
+  margin: 20% 0;
+  opacity: 0;
+  animation: showcontent 2s ease-in-out 0.3s 1 forwards;
+}
+
+.log {
+  text-align: left;
+}
+.item button {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  border: none;
+  opacity: 0;
+  animation: showcontent 1s ease-in-out 0.6s 1 forwards;
+}
+@keyframes showcontent {
+  from {
+    opacity: 0;
+    transform: translate(0, 100px);
+    filter: blur(33px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+    filter: blur(0);
+  }
+}
+.buttons {
+  position: absolute;
+  bottom: 3%;
+  z-index: 222222;
+  text-align: center;
+  width: 100%;
+}
+.buttons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.buttons button:hover {
+  background-color: #bac383;
+  cursor: pointer;
+}
+
+.item .content {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  right: 52%;
+  text-align: left;
+  padding: 1%; /* Add padding for better visibility */
+  color: #eee; /* Add a transparent black background */
+  width: auto; /* Automatically adjust the width based on content */
+  transform: translate(0, -50%);
+  display: none;
+  font-family: system-ui;
+}
+
+.item .name,
+.item .des {
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Add a slightly darker transparent background */
+  padding: 2%;
+  width: auto; /* Automatically adjust the width based on content */
+  margin: 3% 0;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.des {
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Add a slightly darker transparent background */
+  padding: 2%;
+  width: auto; /* Automatically adjust the width based on content */
+  margin: 3% 0;
+  border-radius: 20px;
+  font-size: 21px;
+  text-align: center;
+}
+
+.item .bt1:hover {
+  cursor: pointer;
+}
+
+.item .bt2:hover {
+  cursor: pointer;
+}
+
+.item .bt1 {
+  padding: 3%;
+  width: auto; /* Automatically adjust the width based on content */
+  margin: 2% 0;
+  color: #000000;
+  position: relative;
+  margin-right: 20%;
+  margin-left: 7%;
+  background-color: rgb(184, 40, 4);
+  border-radius: 20px;
+  box-shadow: #dbdbdb;
+  color: white;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+.item .bt2 {
+  padding: 3%;
+  width: auto; /* Automatically adjust the width based on content */
+  margin: 2% 0;
+  color: #000000;
+  position: relative;
+  background-color: rgb(189, 123, 2);
+  border-radius: 20px;
+  color: white;
+  box-shadow: #dbdbdb;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Responsive styles for smaller screens */
+
+@media (max-width: 1200px) {
+  .container {
+    height: auto;
+  }
+  .item .name {
+    font-size: 60px;
+  }
+  .item button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background-position: static;
+  }
+  .item .name {
+    font-size: 80px;
+  }
+
+  .container {
+    padding: 3%;
+  }
+
+  .item {
+    height: auto;
+    width: 100%;
+    position: relative;
+    margin-bottom: 7%;
+  }
+
+  .item .name,
+  .item .des {
+    width: 100%;
+    margin: 2% 0;
+  }
+
+  .item {
+    background-position: 50% 50%;
+    display: inline-block;
+    transition: 2s;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+  }
+  .item .content {
+    left: 3%;
+    right: 8%;
+  }
+  .item .bt1 {
+    margin-right: 30%;
+    margin-left: 10%;
+  }
+}
